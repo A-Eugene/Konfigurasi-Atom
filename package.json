@@ -1,0 +1,12 @@
+{
+  "name": "konfigurasi-atom",
+  "version": "1.0.1",
+  "description": "",
+  "main": "lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": ["konfigurasi elektron", "konfigurasi kuantum", "quantum configuration", "electron configuration", "atom", "bilangan kuantum", "quantum numbers"]
+}
