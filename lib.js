@@ -162,20 +162,36 @@ module.exports = class Atom {
       f: [-3, -2, -1, 0, 1, 2, 3]
     }
 
-    obj.n = this.periode();
+    obj.n = konf[konf.length - 1].kulit;
     obj.l = l.indexOf(subkulit);
 
     let jumlahKotak = 2 * obj.l + 1;
     let indexElektron = jumlahKotak * 2 - 1;
 
-    if (elektron == 1) {
-      obj.m = 1;
-      obj.s = "+ 1/2";
-    } else if (elektron <= jumlahKotak) {
-      obj.m = formatKotak[subkulit][elektron - 1];
+    // Temporary
+    obj.m = [];
+
+    if (elektron <= jumlahKotak) {
+      for (let j = 1; j <= jumlahKotak; j++) {
+        if (j <= elektron) {
+          obj.m.push('↑');
+        } else {
+          obj.m.push('');
+        }      
+      }
+
       obj.s = "+ 1/2";
     } else {
-      obj.m = formatKotak[subkulit][elektron - 1 - formatKotak[subkulit].length];
+      let selisih = elektron - jumlahKotak;
+
+      for (let j = 1; j <= jumlahKotak; j++) {
+        if (j <= selisih) {
+          obj.m.push('↑↓');
+        } else {
+          obj.m.push('↑');
+        }
+      }
+
       obj.s = "- 1/2";
     }
 
